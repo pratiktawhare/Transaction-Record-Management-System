@@ -55,6 +55,7 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log('Form submitted');
     const {name, email, password} = values;
 
     if (!name || !email || !password) {
@@ -63,6 +64,8 @@ const Register = () => {
     }
 
     setLoading(true);
+    console.log('Making API request to:', registerAPI);
+    console.log('Request payload:', {name, email, password});
 
     try {
       const {data} = await axios.post(registerAPI, {
@@ -70,6 +73,7 @@ const Register = () => {
         email,
         password
       });
+      console.log('API response:', data);
 
       if(data.success){
         localStorage.setItem("token", data.token);

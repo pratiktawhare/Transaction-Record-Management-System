@@ -3,8 +3,8 @@ import { loginControllers, registerControllers, setAvatarController } from '../c
 
 const router = express.Router();
 
-router.route("/api/auth/register").post(registerControllers);
-router.route("/api/auth/login").post(loginControllers);
-router.route("/api/auth/setAvatar/:id").post(setAvatarController);
+router.route("/register").post(registerControllers);
+router.route("/login").post(loginControllers);
+router.route("/setAvatar/:id").post(setAvatarController);
 
 export default router;

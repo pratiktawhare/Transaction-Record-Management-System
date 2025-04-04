@@ -23,8 +23,8 @@ app.use(helmet());
 app.use(morgan("dev"));
 
 // Routes
-app.use("/", userRoutes);
-app.use("/api/transactions", transactionRoutes);
+app.use("/api/auth", userRoutes);
+app.use("/api/v1", transactionRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

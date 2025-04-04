@@ -50,8 +50,8 @@ const TableData = (props) => {
     console.log(user._id);
     console.log("Clicked button ID delete:", itemKey);
     setCurrId(itemKey);
-    const {data} = await axios.post(`${deleteTransactions}/${itemKey}`,{
-      userId: props.user._id,
+    const {data} = await axios.delete(`${deleteTransactions}/${itemKey}`, {
+      data: { userId: props.user._id },
     });
 
     if(data.success === true){

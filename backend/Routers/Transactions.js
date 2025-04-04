@@ -7,7 +7,7 @@ router.route("/addTransaction").post(addTransactionController);
 
 router.route("/getTransaction").post(getAllTransactionController);
 
-router.route("/deleteTransaction/:id").post(deleteTransactionController);
+router.route("/deleteTransaction/:id").delete(deleteTransactionController);
 
 router.route('/updateTransaction/:id').put(updateTransactionController);
 
